@@ -1,0 +1,29 @@
+server:
+  port: 9001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7001/eureka/  #往该地址注册自己的信息到注册中心
+  instance:
+    instance-id: order-service-9001
+    prefer-ip-address: true
+
+info:
+  app.name: microservice-provider-goods
+  company.name: www.bdqn.cn
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+spring:
+  application:
+    name: product-service-9001  # 指明微服务应用名，这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name。
+
+  thymeleaf:
+    cache: false
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
